@@ -1,0 +1,28 @@
+<mat-card class="mat-elevation-z8">
+  <p class="login-heading">Please Login Here...</p>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div style="margin-bottom: 18px;">
+      <mat-form-field appearance="outline">
+        <input type="text" matInput formControlName="email" placeholder="Please Enter Your Email" name="">
+        <mat-error *ngIf="frmCtrl['email'].hasError('required')" > Required</mat-error>
+        <mat-error *ngIf="frmCtrl['email'].hasError('pattern')" >{{errMsg.email}} </mat-error>
+      </mat-form-field>
+    </div>
+    <div style="margin-bottom: 1px;">
+      <mat-form-field appearance="outline">
+        <input [type]="passwordIcon?'password':'text'" formControlName="password" matInput
+          placeholder="Please Enter Your Password" name="">
+        <mat-icon style="font-size: 20px;" (click)="passwordIcon = !passwordIcon" matSuffix>
+          {{passwordIcon?'visibility':'visibility_off'}}</mat-icon>
+          <mat-error *ngIf="frmCtrl['password'].hasError('required')" >Password Required</mat-error>
+          <mat-error *ngIf="frmCtrl['password'].hasError('pattern')" >{{errMsg.password}} </mat-error>
+      </mat-form-field>
+    </div>
+    <div class="forgot">
+      <p (click)="forgotNavigate()">Forgot Password?</p>
+    </div>
+    <div>
+      <button mat-raised-button color="primary">Login</button>
+    </div>
+  </form>
+</mat-card>

@@ -1,1 +1,48 @@
-<p>layout works!</p>
+<!-- <mat-toolbar>
+    <button (click)="side.toggle()">login</button>
+</mat-toolbar>
+<mat-sidenav-container fullscreen>
+    <mat-sidenav #side mode="side" opened (click)="side.close()">
+        <mat-list>
+            <mat-list-item>HOME</mat-list-item>
+            <mat-list-item>ABOUT</mat-list-item>
+            <mat-list-item>CONTACT SETTING</mat-list-item>
+            <mat-list-item>MORE</mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <router-outlet></router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container> -->
+
+
+
+<mat-toolbar >
+    <h2>Shop_Now</h2>
+    <div class="toolClass">
+        <div>
+            <button mat-icon-button  (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+            </button> 
+            Admin Panel
+        </div>
+        <div>
+            Profile
+        </div>
+    </div>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav mode="side" opened>
+        <mat-nav-list>
+            <mat-list-item>HOME</mat-list-item>
+            <mat-list-item>ABOUT </mat-list-item>
+            <mat-list-item>CONTANCT</mat-list-item>
+            <mat-list-item>SETTING</mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+       <main style="height: calc(100vh - 104px);">
+    shhh</main>
+    </mat-sidenav-content>
+</mat-sidenav-container>

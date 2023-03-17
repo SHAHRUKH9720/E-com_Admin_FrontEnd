@@ -1,0 +1,19 @@
+.toolClass{
+    width: 100%;
+    margin: 0 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.mat-toolbar-single-row{
+    border-bottom: 3px solid #d1cccc;
+}
+mat-sidenav{
+    width: 10%;
+    background-color: #f5f5f5;
+}
+.mat-list-item{
+    font-size: 20px;
+    font-weight: 400;
+    border-bottom: 1px solid #d1cccc;
+}

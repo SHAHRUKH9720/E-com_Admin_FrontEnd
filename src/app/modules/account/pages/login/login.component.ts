@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
   }
   onSubmit(){
     console.log('form value ',this.loginForm.value);
+    this._router.navigateByUrl("layout")
   }
   forgotNavigate(){
     this._router.navigateByUrl("/account/forgot");

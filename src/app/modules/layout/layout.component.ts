@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { LogoutDialogComponent } from './dialog-box/logout-dialog/logout-dialog.component';
 
 @Component({
   selector: 'app-layout',
@@ -6,8 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout.component.scss']
 })
 export class LayoutComponent implements OnInit {
+  @ViewChild('menuTrigger') menuTrigger: any;
+  constructor(
+    public dialog:MatDialog
+  ) { }
 
-  constructor() { }
+  openDialog() {
+    const dialogRef = this.dialog.open(LogoutDialogComponent, {restoreFocus: false});
+
+    dialogRef.afterClosed().subscribe(() => this.menuTrigger.focus());
+  }
 
   ngOnInit(): void {
   }

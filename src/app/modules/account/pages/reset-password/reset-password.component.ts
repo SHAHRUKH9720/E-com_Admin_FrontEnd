@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { message } from 'src/app/constant/message.constant';
 import { REGEX } from 'src/app/constant/pattern.constant';
 
@@ -11,10 +11,10 @@ import { REGEX } from 'src/app/constant/pattern.constant';
 export class ResetPasswordComponent implements OnInit {
 
   constructor(
-    private _fb:FormBuilder
+    private _fb:UntypedFormBuilder
   ) { }
   passwordIcon=true;
-  resetFrom:FormGroup;
+  resetFrom:UntypedFormGroup;
   errMsg= message
   get frmCtrl() {return this.resetFrom.controls}
 

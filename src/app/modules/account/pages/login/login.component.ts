@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { message } from 'src/app/constant/message.constant';
 import { REGEX,  } from 'src/app/constant/pattern.constant';
@@ -12,14 +12,14 @@ import { REGEX,  } from 'src/app/constant/pattern.constant';
 export class LoginComponent implements OnInit {
 
   constructor(
-    private fb:FormBuilder,
+    private fb:UntypedFormBuilder,
     private _router:Router
     ) {
     this.creatForm()
     
    }
   passwordIcon = true
-  loginForm:FormGroup;
+  loginForm:UntypedFormGroup;
   get frmCtrl()  { return this.loginForm.controls}
   errMsg=message
   

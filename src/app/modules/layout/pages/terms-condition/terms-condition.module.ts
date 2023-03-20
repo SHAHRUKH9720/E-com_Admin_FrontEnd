@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 
 import { TermsConditionRoutingModule } from './terms-condition-routing.module';
 import { TermsConditionComponent } from './terms-condition.component';
-import { QuillModule } from 'ngx-quill';
 import { FormsModule } from '@angular/forms';
 
 
@@ -14,7 +13,6 @@ import { FormsModule } from '@angular/forms';
   imports: [
     CommonModule,
     TermsConditionRoutingModule,
-    QuillModule,
     FormsModule
   ]
 })

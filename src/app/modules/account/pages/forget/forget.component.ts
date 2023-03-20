@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { message } from 'src/app/constant/message.constant';
 import { REGEX } from 'src/app/constant/pattern.constant';
@@ -12,10 +12,10 @@ import { REGEX } from 'src/app/constant/pattern.constant';
 export class ForgetComponent implements OnInit {
 
   constructor(
-    private _fb:FormBuilder,
+    private _fb:UntypedFormBuilder,
     private _router:Router
   ) { }
-  forgotForm:FormGroup
+  forgotForm:UntypedFormGroup
   get frmCtrl() {return this.forgotForm.controls}
   errMsg = message
   ngOnInit(): void {

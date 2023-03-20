@@ -28,7 +28,7 @@
         </div>
         <div style="display: flex; align-items: center; gap: 10px;">
             <img style="height: 60px;" src="https://www.pngitem.com/pimgs/m/24-248235_user-profile-avatar-login-account-fa-user-circle.png" alt="">
-            <button mat-flat-button  style="background-color: #f5f5f5; border: 1px solid #d1cccc;">Logout</button>
+            <button mat-flat-button  style="background-color: #f5f5f5; border: 1px solid #d1cccc;" (click)="logout()">Logout</button>
         </div>
     </div>
 </mat-toolbar>
@@ -36,12 +36,8 @@
 <mat-sidenav-container style="height: calc(100vh - 104px);">
     <mat-sidenav #sidenav mode="side" opened>
         <mat-nav-list>
-            <mat-list-item>PRODUCTS</mat-list-item>
-            <mat-list-item>CATEGORIES </mat-list-item>
-            <mat-list-item>USERS</mat-list-item>
-            <mat-list-item>PROFILE</mat-list-item>
-            <mat-list-item >PRIVACY POLICY</mat-list-item>
-            <mat-list-item (click)="TermsConditon()">T & C</mat-list-item>
+            <mat-list-item *ngFor="let menu of menus" routerLink="{{menu.link}}" >      
+                  {{menu.heading}}</mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>

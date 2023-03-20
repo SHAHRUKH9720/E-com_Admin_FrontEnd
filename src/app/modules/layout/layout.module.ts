@@ -9,6 +9,8 @@ import {MatListModule} from '@angular/material/list';
 import {MatIconModule} from '@angular/material/icon';
 import {MatButtonModule} from '@angular/material/button';
 import {MatDialogModule} from '@angular/material/dialog';
+import { RouterModule } from '@angular/router';
+import { LogoutDialogModule } from './dialog-box/logout-dialog/logout-dialog.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import {MatDialogModule} from '@angular/material/dialog';
     MatButtonModule,
     MatToolbarModule,
     MatListModule,
-    MatDialogModule
+    MatDialogModule,
+    RouterModule,
+    LogoutDialogModule
   ]
 })
 export class LayoutModule { }

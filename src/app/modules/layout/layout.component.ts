@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 import { LogoutDialogComponent } from './dialog-box/logout-dialog/logout-dialog.component';
 
 @Component({
@@ -10,7 +11,8 @@ import { LogoutDialogComponent } from './dialog-box/logout-dialog/logout-dialog.
 export class LayoutComponent implements OnInit {
   @ViewChild('menuTrigger') menuTrigger: any;
   constructor(
-    public dialog:MatDialog
+    public dialog:MatDialog,
+   private _router:Router
   ) { }
 
   openDialog() {
@@ -20,6 +22,10 @@ export class LayoutComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  TermsConditon(){
+    this._router.navigateByUrl("/layout/termcondition")
   }
 
 }

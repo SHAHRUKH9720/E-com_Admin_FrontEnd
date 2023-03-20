@@ -40,12 +40,13 @@
             <mat-list-item>CATEGORIES </mat-list-item>
             <mat-list-item>USERS</mat-list-item>
             <mat-list-item>PROFILE</mat-list-item>
-            <mat-list-item>PRIVACY POLICY</mat-list-item>
-            <mat-list-item>T & C</mat-list-item>
+            <mat-list-item >PRIVACY POLICY</mat-list-item>
+            <mat-list-item (click)="TermsConditon()">T & C</mat-list-item>
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
        <main >
-    shhh</main>
+        <router-outlet></router-outlet>
+    </main>
     </mat-sidenav-content>
 </mat-sidenav-container>

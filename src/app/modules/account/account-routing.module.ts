@@ -13,6 +13,10 @@ const routes: Routes = [
     { path: 'login',
     loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) 
    },
+
+   { path: 'ragister', 
+   loadChildren: () => import('./pages/ragister/ragister.module').then(m => m.RagisterModule) 
+   }, 
  
    { path: 'forgot', loadChildren: () => import('./pages/forget/forget.module').then(m =>  
      m.ForgetModule)
@@ -27,7 +31,8 @@ const routes: Routes = [
    import('./pages/reset-password/reset-password.module').then(m => m.ResetPasswordModule)
   }
  
-  ]}, 
+  ]},
+
 
  
 ];

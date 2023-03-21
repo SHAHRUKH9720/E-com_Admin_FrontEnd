@@ -1,0 +1,46 @@
+<mat-card class="mat-elevation-z8">
+    <div class="new_account_heading_container">
+        <p class="creat_heading">Creat a new account</p>
+        <p class="quick_heading">it's quick and easy</p>
+    </div>
+    <form [formGroup]="ragisterForm" (ngSubmit)="ragister()">
+        <div style="margin-bottom: 1px;">
+            <mat-form-field appearance="outline">
+              <input type="text" matInput formControlName="name"   placeholder="Please Enter Your Name" name="">
+              <mat-error *ngIf="frmCtrl['name'].hasError('required')" > Required</mat-error>
+              <!-- <mat-error *ngIf="frmCtrl['email'].hasError('pattern')" >{{errMsg.email}} </mat-error> -->
+            </mat-form-field>
+          </div>
+      <div style="margin-bottom: 1px;">
+        <mat-form-field appearance="outline">
+          <input type="text" matInput formControlName="email" placeholder="Please Enter Your Email" name="">
+          <mat-error *ngIf="frmCtrl['email'].hasError('required')" > Required</mat-error>
+          <mat-error *ngIf="frmCtrl['email'].hasError('pattern')" >{{errMsg.email}} </mat-error>
+        </mat-form-field>
+      </div>
+      <div style="margin-bottom: 1px;">
+        <mat-form-field appearance="outline">
+          <input type="text" matInput formControlName="mobile"  placeholder="Please Enter Your Mobile Number" name="">
+          <mat-error *ngIf="frmCtrl['mobile'].hasError('required')" > Required</mat-error>
+          <!-- <mat-error *ngIf="frmCtrl['email'].hasError('pattern')" >{{errMsg.email}} </mat-error> -->
+        </mat-form-field>
+      </div>
+      <div style="margin-bottom: 1px;">
+        <mat-form-field appearance="outline">
+          <input [type]="passwordIcon?'password':'text'"  matInput formControlName="password"
+            placeholder="Please Enter Your Password" name="">
+          <mat-icon style="font-size: 20px;" (click)="passwordIcon = !passwordIcon" matSuffix>
+            {{passwordIcon?'visibility':'visibility_off'}}</mat-icon>
+            <mat-error *ngIf="frmCtrl['password'].hasError('required')" >Password Required</mat-error>
+            <mat-error *ngIf="frmCtrl['password'].hasError('pattern')" >{{errMsg.password}} </mat-error>
+        </mat-form-field>
+      </div>
+   
+      <div>
+        <button mat-raised-button color="primary">Ragister</button>
+      </div>
+    </form>
+    <div class="ragister_link">
+        <p >Already have an account &nbsp;<u routerLink="/account/login"> Logoin?</u></p>
+      </div>
+  </mat-card>

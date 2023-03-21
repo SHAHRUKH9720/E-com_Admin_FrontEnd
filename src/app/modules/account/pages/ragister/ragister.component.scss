@@ -4,6 +4,15 @@ mat-form-field{
 mat-error{
     font-size: 15px;
 }
+.new_account_heading_container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+}
+.quick_heading {
+    font-size: 20px;
+  }
 button{
     width: 100%;
     height: 50px;
@@ -13,21 +22,12 @@ input {
     font-size: 15px;
     height: 30px;
 }
-.login-heading{
+.creat_heading{
     font-size: 30px;
-    margin-bottom: 20px;
     color: #673ab7;
 }
-.forgot{
-    display: flex;
-    justify-content: end;
-}
-.forgot p{
-    font-size: 15px;
-    margin-bottom: 5px;
-    cursor: pointer;
-}
-.new_Account p {
+
+.ragister_link p {
     font-size: 15px;
     margin-top: 10px;
     cursor: pointer;

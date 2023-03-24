@@ -35,7 +35,7 @@ export class LayoutComponent implements OnInit {
   }
 
   confirmLogout(){
-
+    this._router.navigateByUrl("/account")
   }
 
 }

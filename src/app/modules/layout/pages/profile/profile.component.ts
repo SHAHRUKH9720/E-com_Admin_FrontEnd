@@ -8,8 +8,15 @@ import { Component, OnInit } from '@angular/core';
 export class ProfileComponent implements OnInit {
 
   constructor() { }
+  inputDisable=true
 
   ngOnInit(): void {
+  }
+  edit(){
+    this.inputDisable=false
+  }
+  cancelEdit(){
+    this.inputDisable=true
   }
 
 }

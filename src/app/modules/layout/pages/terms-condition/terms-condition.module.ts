@@ -6,6 +6,8 @@ import { TermsConditionComponent } from './terms-condition.component';
 import { FormsModule } from '@angular/forms';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { RouterModule } from '@angular/router';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import { RouterModule } from '@angular/router';
     TermsConditionRoutingModule,
     FormsModule,
     RouterModule,
-    EditorModule
+    EditorModule,
+    MatButtonModule,
+    MatIconModule,
   ]
 })
-export class TermsConditionModule { }
+export class TermsConditionModule { 
+}

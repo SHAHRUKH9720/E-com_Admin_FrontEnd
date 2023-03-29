@@ -1,1 +1,144 @@
-<p>profile works!</p>
+<mat-card style="margin-bottom: 20px;margin-top: 20px;">
+    <p style="text-align: center;width: 100%;">
+        <mat-card-title >Profile Info...</mat-card-title>
+       </p>
+  <div class="profile_Card">
+    <div class="profile_img">
+        <img style="border-radius: 10px;" mat-card-lg-image
+            src="https://www.pngitem.com/pimgs/m/24-248235_user-profile-avatar-login-account-fa-user-circle.png">
+    </div>
+    <div style="display: flex; gap: 50px;">
+        <div class="profile_detail_row">
+            <p class="profile_detail_head">Name</p>
+            <p class="profile_detail_head">Email</p>
+            <p class="profile_detail_head">Role</p>
+        </div>
+        <div class="profile_detail_row">
+            <p class="profile_detail_description">Steve</p>
+            <p class="profile_detail_description">steve@yopmail.com</p>
+            <p class="profile_detail_description">Admin</p>
+        </div>
+    </div>
+  </div>
+</mat-card>
+
+<mat-card style="margin-bottom: 20px;">
+      <div class="profile_update_heading_wrapper">
+             <p class="profile_update_heading">
+            <mat-card-title >Update your personal detail here</mat-card-title>
+           </p>
+           <div>
+                <button mat-icon-button (click)="edit()"> 
+                    <mat-icon>edit</mat-icon>
+                </button>
+        </div>
+      </div>
+    <mat-card-content>
+        <form>
+            <div >
+                <p style="margin-bottom: 10px;">Profile photo</p>
+                <div>
+                    <div>
+                        <img style="height: 70px;"
+                            src="https://www.pngitem.com/pimgs/m/24-248235_user-profile-avatar-login-account-fa-user-circle.png"
+                            alt="">
+                    </div>
+                    <div>
+                        <span (click)="profilePhoto.click()" style="cursor: pointer;"><input type="file" #profilePhoto style="display: none;"
+                                name="" id="">Upload Photo</span>
+                    </div>
+                </div>
+            </div>
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">Name</p>
+                </div>
+                <div class="remove-space">
+                    <mat-form-field appearance="outline" >
+                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Name" name="">
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">Email</p>
+                </div>
+                <div class="remove-space">
+                    <mat-form-field appearance="outline" >
+                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Email" name="">
+                      </mat-form-field>
+                </div>
+            </div>
+
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">Role</p>
+                </div>
+                <div class="remove-space">
+                    <mat-form-field appearance="outline" >
+                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Role" name="">
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">Mobile</p>
+                </div>
+                <div class="remove-space">
+                    <mat-form-field appearance="outline" >
+                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Mobile" name="">
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">Coutry</p>
+                </div>
+                <div class="remove-space">
+                    <mat-form-field appearance="outline" >
+                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Country" name="">
+                      </mat-form-field>
+                </div>
+            </div>
+            <div class='profile_button_row'>
+                <button class="" type="button" color="warn" mat-flat-button (click)="cancelEdit()" >Cancel</button>&nbsp;
+                <button class="" mat-flat-button color="primary" >Save</button>
+            </div>
+        </form>
+    </mat-card-content>
+
+</mat-card>
+
+<mat-card>
+    <mat-card-header>
+        <p style="text-align: center;width: 100%;">
+         <mat-card-title >Reset your password here...</mat-card-title>
+        </p>
+     </mat-card-header>
+     <mat-card-content>
+        <div class="profile_info_wrapper">
+            <div class="profile_label">
+                <p class="">New Password</p>
+            </div>
+            <div class="remove-space">
+                <mat-form-field appearance="outline" >
+                    <input type="text" matInput  placeholder="Please Enter Your New Password" name="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class="profile_info_wrapper">
+            <div class="profile_label">
+                <p class="">Confirm Password</p>
+            </div>
+            <div class="remove-space">
+                <mat-form-field appearance="outline" >
+                    <input type="text" matInput  placeholder="Please Enter Your Confirm Password" name="">
+                  </mat-form-field>
+            </div>
+        </div>
+        <div class='profile_button_row'>
+            <button class="editorButton" color="warn" mat-flat-button  >Cancel</button>&nbsp;
+            <button class="editorButton" mat-flat-button color="primary" >Reset</button>
+        </div>
+     </mat-card-content>
+</mat-card>

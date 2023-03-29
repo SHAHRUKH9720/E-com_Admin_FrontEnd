@@ -11,6 +11,10 @@ export class PrivacyPolicyComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  content:any
+  content:any;
+  disableIcon=true
+  updatePrivacy(){
+    console.log(this.updatePrivacy)
+  }
 
 }

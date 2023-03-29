@@ -1,0 +1,52 @@
+.profile_Card{
+    display: flex;
+ 
+}
+.profile_img{
+    flex-basis: 40%;
+}
+.profile_detail_row{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 20px;
+}
+.profile_detail_head{
+    font-size: 22px;
+    font-weight: 500;
+}
+.profile_detail_description{
+    font-size: 20px;
+}
+p{
+    font-size: 20px;
+}
+.remove-space ::ng-deep.mat-form-field-wrapper{
+    padding-bottom: 0px !important;
+}
+.remove-space{
+    flex-basis: 40%;
+}
+.profile_info_wrapper{
+    display: flex;
+    align-items: center;
+}
+.profile_label{
+    flex-basis: 30%;
+}
+mat-form-field{
+    width: 100%;
+}
+.profile_button_row{
+    margin-top: 40px;
+    text-align: center;
+}
+.profile_update_heading_wrapper{
+    display: flex;
+}
+.profile_update_heading{
+    flex-basis: 90%;
+    text-align: center;
+}
+

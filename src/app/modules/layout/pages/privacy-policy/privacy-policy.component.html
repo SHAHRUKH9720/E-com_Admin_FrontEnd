@@ -1,4 +1,21 @@
-<p class="privacy">Privacy Policy</p>
-<editor [(ngModel)]="content" apiKey="204dab5fb90d6d3170dd43a5b75f40e26dd8f8adec08aa4eec71545176130254"  style="height: 50px;"
-initialValue="Once upon a time..."
+<div class="privacy_Wrapper">
+    <p class="privacy">Privacy & Policy</p>
+    <div>
+        <button mat-flat-button color="primary" (click)="disableIcon=false"> Edit
+            <button mat-icon-button color=""> 
+                <mat-icon>edit</mat-icon>
+            </button>
+        </button>
+    </div>
+</div>
+<editor [(ngModel)]="content" 
+[disabled]="disableIcon"
+[init]="{
+    statusbar:false
+}"
 ></editor>
+
+<div style="text-align: center;">
+    <button class="editorButton" mat-flat-button color="warn" (click)="disableIcon=true" >Cancel</button>&nbsp;
+    <button class="editorButton" mat-flat-button color="primary" (click)="updatePrivacy()">Save</button>
+</div>

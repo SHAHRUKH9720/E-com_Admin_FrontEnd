@@ -33,7 +33,7 @@
     </div>
 </mat-toolbar>
 
-<mat-sidenav-container style="height: calc(100vh - 104px);">
+<mat-sidenav-container style="height: calc(100vh - 67px);">
     <mat-sidenav #sidenav mode="side" opened>
         <mat-nav-list>
             <mat-list-item *ngFor="let menu of menus" routerLink="{{menu.link}}" >      
@@ -41,7 +41,7 @@
         </mat-nav-list>
     </mat-sidenav>
     <mat-sidenav-content>
-       <main >
+       <main style="padding: 0 20px;">
         <router-outlet></router-outlet>
     </main>
     </mat-sidenav-content>

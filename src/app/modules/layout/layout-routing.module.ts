@@ -5,7 +5,7 @@ import { LayoutComponent } from './layout.component';
 const routes: Routes = [
   { path: '', component: LayoutComponent,
   children:[
-    {path:'',redirectTo:'products',pathMatch:"full"},
+    {path:'',redirectTo:'profile',pathMatch:"full"},
 
     { path: 'products',
      loadChildren: () => import('./pages/products/products.module')

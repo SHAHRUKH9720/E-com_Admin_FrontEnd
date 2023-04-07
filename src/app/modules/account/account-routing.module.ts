@@ -27,7 +27,7 @@ const routes: Routes = [
      m.ResendEmailModule) 
    },
  
-   { path: 'reset-password', loadChildren: () => 
+   { path: 'reset-password/:token', loadChildren: () => 
    import('./pages/reset-password/reset-password.module').then(m => m.ResetPasswordModule)
   }
  

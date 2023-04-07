@@ -14,9 +14,9 @@
             <p class="profile_detail_head">Role</p>
         </div>
         <div class="profile_detail_row">
-            <p class="profile_detail_description">Steve</p>
-            <p class="profile_detail_description">steve@yopmail.com</p>
-            <p class="profile_detail_description">Admin</p>
+            <p class="profile_detail_description">{{profile.name}}</p>
+            <p class="profile_detail_description">{{profile.email}}</p>
+            <p class="profile_detail_description">{{profile.role}}</p>
         </div>
     </div>
   </div>
@@ -27,14 +27,14 @@
              <p class="profile_update_heading">
             <mat-card-title >Update your personal detail here</mat-card-title>
            </p>
-           <div>
+           <!-- <div>
                 <button mat-icon-button (click)="edit()"> 
                     <mat-icon>edit</mat-icon>
                 </button>
-        </div>
+        </div> -->
       </div>
     <mat-card-content>
-        <form>
+        <form [formGroup]="profileForm" (ngSubmit)="updateProfile()">
             <div >
                 <p style="margin-bottom: 10px;">Profile photo</p>
                 <div>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="remove-space">
                     <mat-form-field appearance="outline" >
-                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Name" name="">
+                        <input  formControlName="name" type="text" matInput  placeholder="Please Enter Your Name" name="">
                       </mat-form-field>
                 </div>
             </div>
@@ -65,7 +65,7 @@
                 </div>
                 <div class="remove-space">
                     <mat-form-field appearance="outline" >
-                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Email" name="">
+                        <input  formControlName="email" type="text" matInput  placeholder="Please Enter Your Email" name="">
                       </mat-form-field>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                 </div>
                 <div class="remove-space">
                     <mat-form-field appearance="outline" >
-                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Role" name="">
+                        <input  formControlName="role" type="text" matInput  placeholder="Please Enter Your Role" name="">
                       </mat-form-field>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="remove-space">
                     <mat-form-field appearance="outline" >
-                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Mobile" name="">
+                        <input  formControlName="mobile" type="text" matInput  placeholder="Please Enter Your Mobile" name="">
                       </mat-form-field>
                 </div>
             </div>
@@ -96,7 +96,7 @@
                 </div>
                 <div class="remove-space">
                     <mat-form-field appearance="outline" >
-                        <input [disabled]="inputDisable" type="text" matInput  placeholder="Please Enter Your Country" name="">
+                        <input  formControlName="country" type="text" matInput  placeholder="Please Enter Your Country" name="">
                       </mat-form-field>
                 </div>
             </div>
@@ -116,29 +116,40 @@
         </p>
      </mat-card-header>
      <mat-card-content>
-        <div class="profile_info_wrapper">
-            <div class="profile_label">
-                <p class="">New Password</p>
+        <form [formGroup]="passwordResetForm" (ngSubmit)="resetPassword()">
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">New Password</p>
+                </div>
+                <div class="remove-space" style="margin-bottom: 1px;">
+                    <mat-form-field appearance="outline" >
+                        <input [type]="passwordIcon?'password':'text'" formControlName="password" matInput  placeholder="Please Enter Your New Password" name="">
+                        <mat-icon style="font-size: 20px;" (click)="passwordIcon = !passwordIcon" matSuffix>
+                            {{passwordIcon?'visibility':'visibility_off'}}</mat-icon>
+                        <mat-error *ngIf="frmCtrlReset['password'].hasError('required')" >Password Required</mat-error>
+                        <mat-error *ngIf="frmCtrlReset['password'].hasError('pattern')" >{{errMsg.password}} </mat-error>
+                      </mat-form-field>
+                     
+                </div>
             </div>
-            <div class="remove-space">
-                <mat-form-field appearance="outline" >
-                    <input type="text" matInput  placeholder="Please Enter Your New Password" name="">
-                  </mat-form-field>
+            <div class="profile_info_wrapper">
+                <div class="profile_label">
+                    <p class="">Confirm Password</p>
+                </div>
+                <div class="remove-space">
+                    <mat-form-field appearance="outline" >
+                        <input [type]="passwordResetIcon?'password':'text'" matInput formControlName="confirm_password" placeholder="Please Enter Your Confirm Password" name="">
+                        <mat-icon style="font-size: 20px;" (click)="passwordResetIcon = !passwordResetIcon" matSuffix>
+                            {{passwordResetIcon?'visibility':'visibility_off'}}</mat-icon>
+                        <mat-error *ngIf="frmCtrlReset['confirm_password'].hasError('required')" >Confirm Password Required</mat-error>
+                        <mat-error *ngIf="frmCtrlReset['confirm_password'].hasError('pattern')" >{{errMsg.password}} </mat-error>
+                      </mat-form-field>
+                </div>
             </div>
-        </div>
-        <div class="profile_info_wrapper">
-            <div class="profile_label">
-                <p class="">Confirm Password</p>
+            <div class='profile_button_row'>
+                <button class="editorButton " color="warn" mat-flat-button  >Cancel</button>&nbsp;
+                <button class="editorButton" type="submit" mat-flat-button color="primary" >Reset</button>
             </div>
-            <div class="remove-space">
-                <mat-form-field appearance="outline" >
-                    <input type="text" matInput  placeholder="Please Enter Your Confirm Password" name="">
-                  </mat-form-field>
-            </div>
-        </div>
-        <div class='profile_button_row'>
-            <button class="editorButton" color="warn" mat-flat-button  >Cancel</button>&nbsp;
-            <button class="editorButton" mat-flat-button color="primary" >Reset</button>
-        </div>
+        </form>
      </mat-card-content>
 </mat-card>

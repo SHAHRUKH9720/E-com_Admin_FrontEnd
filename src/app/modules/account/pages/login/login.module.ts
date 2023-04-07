@@ -13,7 +13,7 @@ import { AccountSharedModule } from '../../account-shared/account-shared.module'
   imports: [
     CommonModule,
     LoginRoutingModule,
-    AccountSharedModule
+    AccountSharedModule,
   ]
 })
 export class LoginModule { }

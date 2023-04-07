@@ -5,6 +5,8 @@ import { ToastrService } from 'ngx-toastr';
 import { ToastService } from 'src/app/common/toast/toast.service';
 import { menus } from 'src/app/constant/route.constant';
 import { LogoutDialogComponent } from './dialog-box/logout-dialog/logout-dialog.component';
+import { StorageService } from 'src/app/common/storage/storage.service';
+import { LayoutService } from './service/layout.service';
 
 @Component({
   selector: 'app-layout',
@@ -16,7 +18,9 @@ export class LayoutComponent implements OnInit {
   constructor(
     public dialog:MatDialog,
    private _router:Router,
-   private _toastrService:ToastService
+   private _toastrService:ToastService,
+   private _storageService:StorageService,
+   private _layoutService:LayoutService
   ) { }
 
  
@@ -30,7 +34,6 @@ export class LayoutComponent implements OnInit {
       disableClose:true
     });
     dialog.afterClosed().subscribe(data=>{
-      console.log(data)
       if(data){
         this.confirmLogout()
       }
@@ -38,8 +41,10 @@ export class LayoutComponent implements OnInit {
   }
   
   confirmLogout(){
-    this._router.navigateByUrl("/account")
-    this._toastrService.success('Logout Successfully')
+    this._layoutService.logout().subscribe(res=>{
+      this._storageService.clearStorge()
+      this._toastrService.success(res['message'])
+    })
   }
 
 }

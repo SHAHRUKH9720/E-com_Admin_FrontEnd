@@ -14,7 +14,8 @@ export class PrivacyPolicyComponent implements OnInit {
   content:any;
   disableIcon=true
   updatePrivacy(){
-    console.log(this.updatePrivacy)
+    console.log(this.content);
+    console.log(typeof this.content)
   }
 
 }

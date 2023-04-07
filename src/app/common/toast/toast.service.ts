@@ -12,6 +12,9 @@ export class ToastService {
   success(msg){
     this._toast.success(msg)
   }
+  error(msg){
+    this._toast.error(msg)
+  }
 }
 
 

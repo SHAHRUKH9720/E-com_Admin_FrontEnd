@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { LoginRoutingModule } from './login-routing.module';
 import { LoginComponent } from './login.component';
 import { AccountSharedModule } from '../../account-shared/account-shared.module';
+import { PreventKeyModule } from 'src/app/common/prevent-key/prevent-key.module';
 
 
 @NgModule({
@@ -14,6 +15,7 @@ import { AccountSharedModule } from '../../account-shared/account-shared.module'
     CommonModule,
     LoginRoutingModule,
     AccountSharedModule,
+    PreventKeyModule
   ]
 })
 export class LoginModule { }

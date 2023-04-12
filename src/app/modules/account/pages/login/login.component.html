@@ -3,7 +3,7 @@
   <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
     <div style="margin-bottom: 18px;">
       <mat-form-field appearance="outline">
-        <input type="text" matInput formControlName="email" placeholder="Please Enter Your Email" name="">
+        <input type="text" [prevent-key]="[32]" matInput formControlName="email" placeholder="Please Enter Your Email" name="">
         <mat-error *ngIf="frmCtrl['email'].hasError('required')" > Required</mat-error>
         <mat-error *ngIf="frmCtrl['email'].hasError('pattern')" >{{errMsg.email}} </mat-error>
       </mat-form-field>

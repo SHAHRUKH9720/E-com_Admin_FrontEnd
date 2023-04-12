@@ -1,7 +1,7 @@
 import { MatPaginator } from "@angular/material/paginator";
 
 export class Pagination{
-
+search:string;
 page:number;
 limit:number
 pageOptions:number[]

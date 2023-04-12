@@ -27,8 +27,8 @@
                     {{element[row.key]}}
                 </ng-container>
                 <ng-container *ngSwitchCase="'action'">
-                    <button mat-flat-button color="primary">{{element[row.key]=='true'?'Active':'Block'}}</button>&nbsp;
-                    <button mat-flat-button color="primary">Delete</button>
+                        <button mat-flat-button color="primary">{{element[row.status]=='true'?'Active':'Block'}}</button>&nbsp;
+                        <button mat-flat-button color="primary">Delete</button>
                 </ng-container>
             </ng-container>
         </td>
@@ -40,7 +40,7 @@
     
 </table>
 
-<mat-paginator [length]="100"
+<mat-paginator [length]="table_data_length"
               [pageSize]="10"
               [pageSizeOptions]="[5, 10, 25, 100]"
               (page)="pageChange($event)"

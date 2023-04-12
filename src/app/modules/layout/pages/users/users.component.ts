@@ -26,6 +26,8 @@ export class UsersComponent extends Pagination implements OnInit {
   )
    { super()}
 
+  search_value
+
   ngOnInit(): void {
     this.get_listing()
   }
@@ -33,10 +35,10 @@ export class UsersComponent extends Pagination implements OnInit {
   get_listing(){
     let params = {
       page:this.page,
-      limit:this.limit
+      limit:this.limit,
+      search:this.search
     }
     this._layoutService.admin_listing(params).subscribe(res=>{
-      console.log('here is data ',res);
       this._commonTableService.tableRender(res['data'],'admin_list')
     },
     ()=>{
@@ -44,13 +46,15 @@ export class UsersComponent extends Pagination implements OnInit {
     }
     )
   }
+
+  searching(){
+    this.search_value?this.search=this.search_value:this.search="";
+    this.get_listing()
+  }
+
   pagination(event){
-    console.log(event)
     this.page =event.pageIndex+1
     this.limit =event.pageSize
-    console.log(this.pageOptionsOnChange);
-    console.log("page",this.page)
-    console.log('limit ',this.limit);
     this.get_listing()
   }
 

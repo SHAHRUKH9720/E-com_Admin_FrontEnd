@@ -13,6 +13,7 @@ export class CommonTableComponent implements OnInit {
   @Input() heading: any = [];
   @Output() page:EventEmitter<any> = new EventEmitter()
   table_name: any;
+  table_data_length
   mat_header_row: any = [];
   dataSource = new MatTableDataSource(ELEMENT_DATA);
 
@@ -27,6 +28,7 @@ export class CommonTableComponent implements OnInit {
       this._commontTableService.tableObs.subscribe((res) => {
       this.table_name = res['table_name'];
       this.dataSource = new MatTableDataSource(res['data']['result']);
+      this.table_data_length = res['data']['totalCount']
     });
   }
 

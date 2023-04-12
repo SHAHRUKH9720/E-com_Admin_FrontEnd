@@ -22,10 +22,12 @@ export class LayoutService {
   }
 
   admin_listing(parmas){
-    console.log(parmas)
     let queryParams = new HttpParams();
     queryParams = queryParams.append("page",parmas.page);
-    queryParams = queryParams.append("page",parmas.limit);
+    queryParams = queryParams.append("limit",parmas.limit);
+    if(parmas.search){
+      queryParams = queryParams.append("search",parmas.search);
+    }
     return this._http.get(adminListing,{params:queryParams})
   }
 

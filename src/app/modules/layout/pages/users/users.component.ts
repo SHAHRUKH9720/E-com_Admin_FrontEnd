@@ -11,13 +11,14 @@ import { Pagination } from 'src/app/constant/pagination';
 export class UsersComponent extends Pagination implements OnInit {
 
   headings = [
-    {heading:'Name',key:'name'},
-    {heading:'Email',key:'email'},
-    {heading:'Role',key:'role'},
-    {heading:'Mobile',key:'mobile'},
-    {heading:'Country',key:'country'},
-    {heading:'Status',key:'status'},
-    {heading:'Action',key:'action'},
+    {heading:'S.No',key:'s_no',sorting:false},
+    {heading:'Name',key:'name',sorting:true},
+    {heading:'Email',key:'email',sorting:true},
+    {heading:'Role',key:'role',sorting:true},
+    {heading:'Mobile',key:'mobile',sorting:true},
+    {heading:'Country',key:'country',sorting:true},
+    {heading:'Status',key:'status',sorting:false},
+    {heading:'Action',key:'action',sorting:false},
   ]
 
   constructor(

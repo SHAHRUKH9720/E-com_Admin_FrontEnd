@@ -5,7 +5,7 @@ import { CommonTableService } from './service/common-table.service';
 import { CommonTableComponent } from './common-table/common-table.component';
 import { MatButtonModule } from '@angular/material/button';
 import {MatPaginatorModule} from '@angular/material/paginator';
-
+import {MatSortModule} from '@angular/material/sort';
 @NgModule({
   declarations: [
     CommonTableComponent
@@ -14,7 +14,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     CommonModule,
     MatTableModule,
     MatButtonModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatSortModule
   ],
   exports:[
     CommonTableComponent,

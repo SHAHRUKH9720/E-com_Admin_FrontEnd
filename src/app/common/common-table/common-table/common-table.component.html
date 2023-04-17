@@ -1,13 +1,16 @@
-<table mat-table [dataSource]="dataSource">
+<table mat-table matSort (matSortChange)="sortData($event)" [dataSource]="dataSource">
 
     <ng-container *ngFor="let row of heading" [matColumnDef]="row.heading">
         <ng-container *ngIf="row.heading!=='select'">
-            <th mat-header-cell *matHeaderCellDef="">
+            <th mat-header-cell  mat-sort-header [disabled]="!row.sorting" *matHeaderCellDef="">
                 {{row.heading}}
             </th>
         </ng-container>
         <td mat-cel *matCellDef="let element ">
             <ng-container [ngSwitch]="row.key">
+                <ng-container *ngSwitchCase="'s_no'">
+                    {{element[row.key]}}
+                </ng-container>
                 <ng-container *ngSwitchCase="'name'">
                     {{element[row.key]}}
                 </ng-container>
@@ -27,7 +30,7 @@
                     {{element[row.key]}}
                 </ng-container>
                 <ng-container *ngSwitchCase="'action'">
-                        <button mat-flat-button color="primary">{{element[row.status]=='true'?'Active':'Block'}}</button>&nbsp;
+                        <button mat-flat-button color="primary" (click)="getAction(element)">{{element['status']=='true'?'Block':'active'}}</button>&nbsp;
                         <button mat-flat-button color="primary">Delete</button>
                 </ng-container>
             </ng-container>
